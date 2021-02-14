@@ -1,1 +1,1 @@
-# Nokia
+# Nokia Stack(LIFO) Project Details

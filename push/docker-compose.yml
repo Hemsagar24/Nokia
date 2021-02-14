@@ -1,0 +1,40 @@
+service: "3"
+services:
+  mymariadb:
+    image: "mariadb"
+    environment:
+      - MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - sagar-volume:/var/lib/mysql
+  mypostgre:
+    image: "postgres"
+    environment:
+      - POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - sagar-volume:/var/lib/postgresql/data
+  mypush:
+    build: .
+    environment:
+      - spring.profiles.active: mariadb
+      - spring.datasource.url: jdbc:mariadb://mymariadb:3306/stack
+    ports:
+      - "8080:8080"
+    links:
+      - "mymariadb"
+      - "mypostgre"
+  mypop:
+    build: .
+    environment:
+      - spring.profiles.active: mariadb
+      - spring.datasource.url: jdbc:mariadb://mymariadb:3306/stack
+    ports:
+      - "8081:8081"
+    links:
+      - "mymariadb"
+      - "mypostgre"
+volumes: 
+  sagar-volume   

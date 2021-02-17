@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymariadb
+  labels:
+    environment: maria_db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      environment: maria_db
+  template:
+    metadata:
+      labels:
+        environment: maria_db
+    spec:
+      containers:
+       - name: mymariadb
+         image: mariadb
+         ports:
+         - containerPort: 3306
+         env:
+         - name: MYSQL_ROOT_PASSWORD
+           value: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mymariadb-service
+spec:
+  selector:
+    environment: maria_db
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mypostgres
+  labels:
+    environment: postgres_db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      environment: postgres_db
+  template:
+    metadata:
+      labels:
+        environment: postgres_db
+    spec:
+      containers:
+       - name: mypostgresdb
+         image: postgres
+         ports:
+         - containerPort: 5432
+         env:
+         - name: POSTGRES_PASSWORD
+           value: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mypostgresdb-service
+spec:
+  selector:
+    environment: postgres_db
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+
+         

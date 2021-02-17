@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mypushservice
+  labels:
+    environment: mypush
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      environment: mypush
+  template:
+    metadata:
+      labels:
+        environment: mypush
+    spec:
+      containers:
+       - name: mypush-service
+         image: hemsagar1994/mypush2
+         ports:
+         - containerPort: 8080
+         env:
+         - name: spring.profiles.active
+           valueFrom:
+            configMapKeyRef:
+              name: api-configmap
+              key: active_profile
+         - name: spring.datasource.password
+           value: password
+         - name: spring.datasource.url
+           valueFrom:
+            configMapKeyRef:
+              name: api-configmap
+              key: database_url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mypush-externalservice
+spec:
+  selector:
+    environment: mypush
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30002       

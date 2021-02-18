@@ -28,6 +28,8 @@
         a.pickup the url starting with 127.*.*.*:XXXXX and append "/swagger-ui/"
         
         e.g: http://127.0.0.1:49292/swagger-ui/[Can test the API here]
+        
+    Reference Link: https://drive.google.com/drive/folders/1YZ2xpbcdXYxGZqJEEd37Cj0jI3PZjoSw?usp=sharing
     
     
    

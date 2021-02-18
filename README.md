@@ -31,5 +31,9 @@
         
     Reference Link: https://drive.google.com/drive/folders/1YZ2xpbcdXYxGZqJEEd37Cj0jI3PZjoSw?usp=sharing
     
+    ** In order to run the docker-compose that can also be done by going to the same folder 
+        1. docker-compose up -d
+        2. .env file present to change the Db before run(urls & profiles are mentioned in the .env file comment section)
+    
     
    

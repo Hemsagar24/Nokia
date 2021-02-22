@@ -15,6 +15,8 @@ stack(LIFO)needtoImplented?
 
 notable to select database during deployment?
 
+none form above
+
 
 # Nokia (Language: JAVA)
   #Execution Steps: 

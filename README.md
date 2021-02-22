@@ -39,12 +39,19 @@
     
     
    Note: Just adding one point this implementation i thought of doing via Actualstack(LIFO) methodology, 
+         
          like implementing proper push()/pop(),
+         
          as it was mentioned in the problem statment to implement Stach(LIFO),
+         
          however i find some loopholes on that implementation as per my analysis.
+         
          1. Suppose i go with my current approach(My current Submitted Project )
+         
          2. Then how could i share my same stack java object across microservice for doing 
+         
          3. operation like push and pop without storing it in any persistance layer
+         
          4. or else even if i go with a single microservice that time also this couldbe an issue.
 
   Just added this as per my analysis,

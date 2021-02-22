@@ -38,11 +38,13 @@
         2. .env file present to change the Db before run(urls & profiles are mentioned in the .env file comment section)
     
     
-   Note: Just adding one point this implementation i thought of doing via Actualstack(LIFO) methodology, 
+   Note: Just adding one point 
+   
+   this implementation i thought of doing via Actual Stack(LIFO) methodology, 
          
          like implementing proper push()/pop(),
          
-         as it was mentioned in the problem statment to implement Stach(LIFO),
+         as it was mentioned in the problem statment to implement Stack(LIFO),
          
          however i find some loopholes on that implementation as per my analysis.
          
@@ -54,6 +56,5 @@
          
          4. or else even if i go with a single microservice that time also this couldbe an issue.
 
-  Just added this as per my analysis,
-  Hope this will help.
+  Adding this as per my analysis.
  

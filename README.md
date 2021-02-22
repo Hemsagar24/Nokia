@@ -4,10 +4,15 @@ Hi
 Some one tell me why its rejected ?
 
 microservice artitecture issue? 
+
 dockerfile issue ? 
+
 kubernetesYML ?
+
 codingstandard? 
+
 stack(LIFO)needtoImplented?
+
 notable to select database during deployment?
 
 
